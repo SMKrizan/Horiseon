@@ -1,13 +1,16 @@
+/* This universal selector '*' will override some default browser elements and, with 'border-box', will tell the browser to ignore padding in overall width for those elements using percentage to describe width, for example. */
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 
+/* sets background color for the full page */
 body {
     background-color: #d9dcd6;
 }
 
+/* the next several selectors have been simplified by changing the 'div' to the more descriptive 'header', which also allows this to be an element selector, rather than a class selector. */
 header {
     padding: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -41,13 +44,10 @@ header div ul li {
     margin-left: 25px;
 }
 
-a {
+/* this selector was narrowed so that, should another <a> element be added to the html, the same styling will not be applied. */
+header div ul li a {
     color: #ffffff;
     text-decoration: none;
-}
-
-p {
-    font-size: 16px;
 }
 
 .hero {
@@ -57,6 +57,11 @@ p {
     background-image: url("../images/digital-marketing-meeting.jpg");
     background-size: cover;
     background-position: center;
+}
+
+/* this selector was narrowed to reference only <p> within the hero section, to prevent the same styling from being added to any new <p> which may be added to html files associated with this stylesheet. */
+.hero p {
+    font-size: 16px;
 }
 
 .float-left {
@@ -69,12 +74,32 @@ p {
     margin-left: 25px;
 }
 
+/* Names were changed and applied to all three <div> within this section to eliminate repetitive code. */
 .content {
     width: 75%;
     display: inline-block;
     margin-left: 20px;
 }
 
+.content-services {
+    margin-bottom: 20px;
+    padding: 50px;
+    height: 300px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #0072bb;
+    color: #ffffff;
+}
+
+.content-services img {
+    max-height: 200px;
+}
+
+.content-services h2 {
+    margin-bottom: 20px;
+    font-size: 36px;
+}
+
+/* Names were changed and applied to all three <div> in order to eliminated repetitive code. */
 .benefits {
     margin-right: 20px;
     padding: 20px;
@@ -102,69 +127,7 @@ p {
     max-width: 150px;
 }
 
-.search-engine-optimization {
-    margin-bottom: 20px;
-    padding: 50px;
-    height: 300px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: #0072bb;
-    color: #ffffff;
-}
-
-.online-reputation-management {
-    margin-bottom: 20px;
-    padding: 50px;
-    height: 300px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: #0072bb;
-    color: #ffffff;
-}
-
-.social-media-marketing {
-    margin-bottom: 20px;
-    padding: 50px;
-    height: 300px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: #0072bb;
-    color: #ffffff;
-}
-
-.content-services {
-    margin-bottom: 20px;
-    padding: 50px;
-    height: 300px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: #0072bb;
-    color: #ffffff;
-}
-
-.search-engine-optimization img {
-    max-height: 200px;
-}
-
-.online-reputation-management img {
-    max-height: 200px;
-}
-
-.social-media-marketing img {
-    max-height: 200px;
-}
-
-.search-engine-optimization h2 {
-    margin-bottom: 20px;
-    font-size: 36px;
-}
-
-.online-reputation-management h2 {
-    margin-bottom: 20px;
-    font-size: 36px;
-}
-
-.social-media-marketing h2 {
-    margin-bottom: 20px;
-    font-size: 36px;
-}
-
+/* This section was switched to <footer> from <div> for the sake of simplification. */
 footer {
     padding: 30px;
     clear: both;
