@@ -9,9 +9,12 @@
 *  heading attributes are sequential; and
 *  the re-named title is descriptive and concise.  
 
-## SCREENSHOT
+## SCREENSHOTS
+### page overview
 <img src="./Horiseon_screenshot.png">
+### page title view
+<img src="./Horiseon_screenshot2.png">
 
 ## LINK TO DEPLOYED APPLICATION
-
+[https://smkrizan.github.io/chllnge-wk1_Horiseon/]
 
