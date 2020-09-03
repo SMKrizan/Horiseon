@@ -1,4 +1,4 @@
-/* This universal selector '*' will override some default browser elements and, with 'border-box', will tell the browser to ignore padding in overall width for those elements using percentage to describe width, for example. */
+/* Universal selector '*' may override conflicts coming from default browser elements; the combination of the 'box-sizing' and 'margin' values will tell the browser to ignore padding in overall width measurements that use percentages, for example. */
 * {
     box-sizing: border-box;
     padding: 0;
@@ -10,7 +10,7 @@ body {
     background-color: #d9dcd6;
 }
 
-/* the next several selectors have been simplified by changing the 'div' to the more descriptive 'header', which also allows this to be an element selector, rather than a class selector. */
+/* The next several rules use the 'header' element selector to modify the corresponding html element, with varying degrees of specificity based on the other elements added as selectors. */
 header {
     padding: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -18,16 +18,19 @@ header {
     color: #ffffff;
 }
 
+/* The display value turns the H1 element from a block to an inline element to make room for the navigation statements on the same line. */
 header h1 {
-    display: inline-block;
+    display: inline;
     font-size: 48px;
 }
 
+/* this combo element/class selector changes utilizes the <span> element to subtly highlight the "seo" in Horiseon. */
 header h1 .seo {
     color: #d9dcd6;
 }
 
-header div {
+/* This rule pushes the navigation links to the right side of the page; this and the next several rules add other style properties to the navigation. */
+header nav {
     padding-top: 15px;
     margin-right: 20px;
     float: right;
@@ -35,21 +38,21 @@ header div {
     font-size: 20px;
 }
 
-header div ul {
+header nav ul {
     list-style-type: none;
 }
 
-header div ul li {
-    display: inline-block;
+header nav ul li {
+    display: inline;
     margin-left: 25px;
 }
 
-/* this selector was narrowed so that, should another <a> element be added to the html, the same styling will not be applied. */
-header div ul li a {
+header nav ul li a {
     color: #ffffff;
     text-decoration: none;
 }
 
+/* This rule applies to "the hero" - the large main page image */
 .hero {
     height: 800px;
     width: 100%;
@@ -59,11 +62,12 @@ header div ul li a {
     background-position: center;
 }
 
-/* this selector was narrowed to reference only <p> within the hero section, to prevent the same styling from being added to any new <p> which may be added to html files associated with this stylesheet. */
-.hero p {
+/* This rule will style all paragraph content linked to this style sheet, if not acted upon by a more specific selector. */
+p {
     font-size: 16px;
 }
 
+/* the next two general class selectors are used to alterate the text and images within the content section */
 .float-left {
     float: left;
     margin-right: 25px;
@@ -74,7 +78,7 @@ header div ul li a {
     margin-left: 25px;
 }
 
-/* Names were changed and applied to all three <div> within this section to eliminate repetitive code. */
+/* the next several rules apply to the main class="content" section which holds 3 class="content-services" containers */
 .content {
     width: 75%;
     display: inline-block;
@@ -99,11 +103,12 @@ header div ul li a {
     font-size: 36px;
 }
 
-/* Names were changed and applied to all three <div> in order to eliminated repetitive code. */
+/* the next several rules apply to the main class="benefits" section which holds 3 class="benefit" containers */
 .benefits {
     margin-right: 20px;
     padding: 20px;
-    clear: both;
+    /* clear: both;  I understand that the 'clear' property relates to the container in relation to external float elements, but I cannot ascertain what actual 
+    affect this property has here - it seems to have no impact, so it is preserved though commented out. */
     float: right;
     width: 20%;
     height: 100%;
@@ -121,13 +126,14 @@ header div ul li a {
     text-align: center;
 }
 
+/* the below display and margin values help to center the dcorative images within their container */
 .benefit img {
     display: block;
     margin: 10px auto;
     max-width: 150px;
 }
 
-/* This section was switched to <footer> from <div> for the sake of simplification. */
+/* The last two rules style the footer. */
 footer {
     padding: 30px;
     clear: both;
